@@ -1,4 +1,4 @@
-apiVersion: argoproj.io/v1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: loki
@@ -14,6 +14,12 @@ metadata:
 spec:
   # The project the application belongs to.
   project: default
+
+  # Destination cluster and namespace to deploy the application
+  destination:
+    # cluster API URL
+    server: https://kubernetes.default.svc
+
 
   # Source of the application manifests
   source:
