@@ -1,0 +1,25 @@
+apiVersion: vendir.k14s.io/v1alpha1
+kind: Config
+
+# declaration of minimum required vendir binary version (optional)
+minimumRequiredVersion: 0.8.0
+
+# one or more directories to manage with vendir
+directories:
+- # path is relative to `vendir` CLI working directory
+  path: loki/vendor
+
+  # set the permissions for this directory (optional; v0.33.0+)
+  # by default directories will be created with 0700
+  # can be provided as octal, in which case it needs to be prefixed with a `0`
+  permissions: 0700
+
+  contents:
+    - path: helm
+      lazy: true
+
+      helmChart:
+        name: loki
+        version: "6.49.0"
+        repository:
+          url: oci://ghcr.io/grafana/helm-charts

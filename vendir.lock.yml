@@ -1,0 +1,10 @@
+apiVersion: vendir.k14s.io/v1alpha1
+directories:
+- contents:
+  - configDigest: 830d32aef583163dbdeecadb87ea0c66aa8c798dd5c22b385890c62a410778d0
+    helmChart:
+      appVersion: 3.6.3
+      version: 6.49.0
+    path: helm
+  path: loki/vendor
+kind: LockConfig
