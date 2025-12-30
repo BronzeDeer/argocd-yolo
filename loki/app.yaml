@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
   finalizers:
     # The default behaviour is foreground cascading deletion
-    - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io/foreground
     # Alternatively, you can use background cascading deletion
     # - resources-finalizer.argocd.argoproj.io/background
   # Add labels to your application object.
